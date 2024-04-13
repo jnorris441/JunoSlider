@@ -44,6 +44,9 @@ public struct JunoSlider: View {
                             .onAppear {
                                 sliderWidth = proxy.size.width
                             }
+                            .onChange(of: proxy.size.width){newWidth in
+                                sliderWidth = newWidth
+                            }
                     }
                 }
                 .frame(height: isGestureActive ? expandedHeight : baseHeight)
